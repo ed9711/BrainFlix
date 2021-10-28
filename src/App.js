@@ -1,11 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Nav from "./components/nav/nav.js";
 
 function App() {
   return (
-    <div className="App">
-    
-    </div>
+    <Nav/>
   );
 }
 
