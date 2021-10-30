@@ -3,17 +3,34 @@
 
 .nav {
     padding: 0 1rem;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5vw;
+    }
+    @include padding-calc;
     &__title {
         display: flex;
         justify-content: center;
+        @include tablet {
+            
+        }
         &-icon {
             padding: 1rem 0;
         }
     }
     &__block {
         position: relative;
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
     }
-
+    &__subblock {
+        @include tablet {
+            margin-right: 1rem;
+        }
+    }
     &__search {
         width: 70%;
         border: $Mercury 1px solid;
@@ -21,6 +38,11 @@
         padding: 0.5rem 0;
         background: url(../../assets/Icons/search.svg) no-repeat scroll 7px 7px, $Alabaster;
         padding-left: 2rem;
+        @include tablet {
+            padding: 0.75rem 2rem;
+            background-position: 0.7rem 0.7rem;
+            background-size: 7.5%;
+        }
     }
 
     &__upload {
@@ -31,6 +53,9 @@
         border-radius: 4px;
         margin: 1rem 0;
         @include labels-buttons;
+        @include tablet {
+            width: 158px;
+        }
     }
     
     &__avatar {
@@ -43,12 +68,14 @@
         position: absolute;
         top: 0px;
         right: 0px;
-        // @include tablet {
-        //     height: 48px;
-        //     width: 48px;
-        // }
-        // @include desktop {
-        //     margin-left: 4rem;
-        // }
+        @include tablet {
+            height: 40px;
+            width: 40px;
+            position: relative;
+            margin-left: 1rem;
+        }
+        @include desktop {
+            margin-left: 2rem;
+        }
     }
 }

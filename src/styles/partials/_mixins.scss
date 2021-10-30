@@ -41,3 +41,10 @@
     @include text-detail(12px, 20px, Bold);
     color: $White;
 }
+
+@mixin padding-calc {
+    @include desktop {
+        padding-left: calc((100% - #{$desktop})/2 + 128px);
+        padding-right: calc((100% - #{$desktop})/2 + 128px);
+    }
+}
