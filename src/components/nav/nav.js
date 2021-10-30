@@ -1,5 +1,6 @@
 import { Component } from "react";
 import brainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
+// import searchIcon from "../../assets/Icons/search.svg";
 import './nav.scss';
 
 class Nav extends Component {
@@ -11,7 +12,6 @@ class Nav extends Component {
                 </div>
                 <div className="nav__block">
                     <div className="nav__subblock">
-                        <span className="nav__search-icon"></span>
                         <input className="nav__search" type="text" placeholder="Search"></input>
                     </div>
                     <div><button className="nav__upload">UPLOAD</button></div>

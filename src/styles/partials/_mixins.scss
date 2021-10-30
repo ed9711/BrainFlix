@@ -1,0 +1,43 @@
+@use "./vars" as *;
+@use "./colour" as *;
+@use "./fonts" as *;
+
+
+@mixin text-detail($size, $height, $weight) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin page-header {
+    @include text-detail(1.5rem, 2rem, Bold);
+}
+
+@mixin section-header {
+    @include text-detail(12px, 20px, Bold);
+}
+
+@mixin subheader {
+    @include text-detail(13px, 18px, Bold);
+}
+
+@mixin body-copy {
+    @include text-detail(13px, 18px, normal);
+}
+
+@mixin labels-buttons {
+    @include text-detail(12px, 20px, Bold);
+    color: $White;
+}
