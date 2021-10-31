@@ -13,12 +13,12 @@ class App extends Component {
     return (
       <>
       <Nav/>
-      <div className="video">
+      <section className="video">
         <VideoPlayer videoDetails={this.state.selectedVideo}/>
-        <div className="video__block">
+        <section className="video__block">
           <VideoDetails videoDetails={this.state.selectedVideo}/>
-        </div>
-      </div>
+        </section>
+      </section>
       </>
     );
   };

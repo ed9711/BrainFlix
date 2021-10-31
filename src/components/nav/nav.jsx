@@ -5,7 +5,7 @@ import './nav.scss';
 class Nav extends Component {
     render(){
         return(
-            <section className="nav">
+            <nav className="nav">
                 <div className="nav__title">
                     <img className="nav__title-icon" src={brainFlixLogo} alt="brainflix logo"></img>
                 </div>
@@ -16,7 +16,7 @@ class Nav extends Component {
                     <div><button className="nav__upload">UPLOAD</button></div>
                     <div className="nav__avatar"></div>
                 </div>
-            </section>
+            </nav>
         );
     };
 }

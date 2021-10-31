@@ -40,6 +40,9 @@
         padding: 0.5rem 0;
         background: url(../../assets/Icons/search.svg) no-repeat scroll 7px 7px, $Alabaster;
         padding-left: 2rem;
+        &:focus-visible {
+            outline: 2px solid $BandSite-Blue;
+        }
         @include tablet {
             padding: 0.75rem 2rem;
             background-position: 0.7rem 0.7rem;
@@ -59,20 +62,12 @@
             width: 158px;
         }
     }
-    
     &__avatar {
-        border-radius: 50%;
-        height: 36px;
-        width: 36px;
-        background-image: url(../../assets/Images/Mohan-muruge.jpg);
-        background-size: 157%;
-        background-position: 14% 0%;
+        @include avatar;
         position: absolute;
         top: 0px;
         right: 0px;
         @include tablet {
-            height: 40px;
-            width: 40px;
             position: relative;
             margin-left: 1rem;
         }

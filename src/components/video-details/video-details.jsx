@@ -1,5 +1,6 @@
 import { Component } from "react";
 import './video-details.scss';
+import Comments from "../comments/comments";
 
 class VideoDetails extends Component {
     timeStampToTime = (timeStamp) => {
@@ -9,7 +10,7 @@ class VideoDetails extends Component {
     };
     render(){
         return(
-            <div className="video__details">
+            <section className="video__details">
                 <div className="video__title">{this.props.videoDetails.title}</div>
                 <div className="video__body">
                     <div className="video__creator">
@@ -22,7 +23,8 @@ class VideoDetails extends Component {
                     </div>
                 </div>
                 <p className="video__description">{this.props.videoDetails.description}</p>
-            </div>
+                <Comments comments={this.props.videoDetails.comments}/>
+            </section>
         );
     };
 }

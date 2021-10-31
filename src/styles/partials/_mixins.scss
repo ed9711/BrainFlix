@@ -57,3 +57,16 @@
         padding-right: calc((100% - #{$desktop})/2 + 128px);
     }
 }
+
+@mixin avatar {
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    background-image: url(../../assets/Images/Mohan-muruge.jpg);
+    background-size: 157%;
+    background-position: 14% 0%;
+    @include tablet {
+        height: 40px;
+        width: 40px;
+    }
+}
