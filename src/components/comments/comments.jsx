@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './comments.scss';
+import Comment from "../comment/comment";
 
 class Comments extends Component {
     render(){
@@ -15,6 +16,9 @@ class Comments extends Component {
                         </form>
                         <button className="comments__form-submit" type="submit" form="form">COMMENT</button>
                     </div>
+                </div>
+                <div className="comments__all">
+                    {this.props.comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
                 </div>
             </div>
         );
