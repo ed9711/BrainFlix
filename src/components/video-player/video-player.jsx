@@ -8,7 +8,7 @@ class VideoPlayer extends Component {
         <video className="video__player" poster={this.props.videoDetails.image} controls>
             
         </video>
-      );
+        );
     };
 }
 export default VideoPlayer;

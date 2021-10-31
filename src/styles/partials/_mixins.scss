@@ -23,6 +23,9 @@
 
 @mixin page-header {
     @include text-detail(1.5rem, 2rem, Bold);
+    @include tablet {
+        @include text-detail(33px, 44px, Bold);
+    }
 }
 
 @mixin section-header {
@@ -31,10 +34,16 @@
 
 @mixin subheader {
     @include text-detail(13px, 18px, Bold);
+    @include tablet {
+        @include text-detail(14px, 22px, Bold);
+    }
 }
 
 @mixin body-copy {
     @include text-detail(13px, 18px, normal);
+    @include tablet {
+        @include text-detail(14px, 22px, normal);
+    }
 }
 
 @mixin labels-buttons {

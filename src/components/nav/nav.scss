@@ -2,11 +2,10 @@
 @use "../../styles/partials/colour" as *;
 
 .nav {
-    padding: 0 1rem;
+    padding: 0 5vw;
     @include tablet {
         display: flex;
         justify-content: space-between;
-        padding: 0 5vw;
     }
     @include padding-calc;
     &__title {
@@ -29,6 +28,9 @@
     &__subblock {
         @include tablet {
             margin-right: 1rem;
+        }
+        @include desktop {
+            margin-right: 2rem;
         }
     }
     &__search {

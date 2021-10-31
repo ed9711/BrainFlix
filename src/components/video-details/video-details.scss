@@ -1,0 +1,77 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colour" as *;
+
+.video {
+    &__title {
+        @include page-header;
+        padding: 1.5rem 0 1rem 0;
+        @include tablet {
+            padding-bottom: 0.5rem;
+        }
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: $Mercury 1px solid;
+        border-left: none;
+        border-right: none;
+        @include tablet {
+            border-top: none;
+            padding: 0;
+        }
+    }
+    &__creator {
+        @include tablet {
+            display: flex;
+        }
+        &-channel {
+            margin: 0.5rem 0;
+            @include subheader;
+            @include tablet {
+                padding-right: 2rem;
+            }
+        }
+        &-date {
+            margin: 0.5rem 0;
+            @include body-copy;
+            color: $Silver;
+        }
+    }
+    &__stats {
+        @include tablet {
+            display: flex;
+        }
+    }
+    &__views {
+        @include body-copy;
+        margin: 0.5rem 0;
+        padding-right: 3rem;
+        color: $Silver;
+        &::before {
+            content: url(../../assets/Icons/views.svg);
+            vertical-align: middle;
+            position: relative;
+            right: 0.5rem;
+        }
+        @include tablet {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+    }
+    &__likes {
+        @extend .video__views;
+        &::before {
+            content: url(../../assets/Icons/likes.svg);
+        }
+    }
+    &__description {
+        margin: 0;
+        padding: 1rem 0;
+        @include body-copy;
+        @include tablet {
+            padding: 2rem 0;
+        }
+    }
+
+}
