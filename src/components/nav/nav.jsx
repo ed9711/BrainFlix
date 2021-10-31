@@ -1,6 +1,5 @@
 import { Component } from "react";
 import brainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
-// import searchIcon from "../../assets/Icons/search.svg";
 import './nav.scss';
 
 class Nav extends Component {
