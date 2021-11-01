@@ -2,6 +2,9 @@
 @use "../../styles/partials/colour" as *;
 
 .side-videos {
+    @include tablet {
+        padding-bottom: 4vw;
+    }
     @include desktop {
         padding-left: 2rem;
     }

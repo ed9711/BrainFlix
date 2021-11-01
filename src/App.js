@@ -10,6 +10,10 @@ import { Component } from 'react';
 class App extends Component {
   state = {videos:videosJSON, selectedVideo:videoDetailsJSON[0]};
 
+  onClick = (id) => {
+    this.setState({selectedVideo: videoDetailsJSON.find(video => id===video.id)})
+  };
+
   render(){
     return (
       <>
@@ -18,7 +22,10 @@ class App extends Component {
         <VideoPlayer videoDetails={this.state.selectedVideo}/>
         <section className="video__block">
           <VideoDetails videoDetails={this.state.selectedVideo}/>
-          <SideVideo videos={this.state.videos}/>
+          <SideVideo 
+            videos={this.state.videos.filter(video => video.id!==this.state.selectedVideo.id)}
+            onClick={this.onClick}
+          />
         </section>
       </section>
       </>

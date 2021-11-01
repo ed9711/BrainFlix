@@ -7,7 +7,7 @@ class SideVideo extends Component {
         return(
             <div className="side-videos">
                 <div className="side-videos__title">NEXT VIDEOS</div>
-                {this.props.videos.map(video => <SingleVideo key={video.id} video={video}/>)}
+                {this.props.videos.map(video => <SingleVideo key={video.id} video={video} onClick={this.props.onClick}/>)}
             </div>
         );
     };
