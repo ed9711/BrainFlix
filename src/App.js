@@ -4,6 +4,7 @@ import VideoPlayer from "./components/video-player/video-player";
 import videosJSON from "./Data/videos.json";
 import videoDetailsJSON from "./Data/video-details.json";
 import VideoDetails from "./components/video-details/video-details"
+import SideVideo from './components/side-video/side-video';
 import { Component } from 'react';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
         <VideoPlayer videoDetails={this.state.selectedVideo}/>
         <section className="video__block">
           <VideoDetails videoDetails={this.state.selectedVideo}/>
+          <SideVideo videos={this.state.videos}/>
         </section>
       </section>
       </>

@@ -7,7 +7,7 @@ class Comments extends Component {
         return(
             <div className="comments">
                 <div className="comments__title">{this.props.comments.length} Comments</div>
-                <div className="comments__block">
+                <div className="comments__block comments__block--head">
                     <div className="comments__avatar"></div>
                     <div className="comments__subblock">
                         <form action="" method="get" className="comments__form" id="form">

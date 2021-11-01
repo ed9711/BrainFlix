@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colour" as *;
+
+.side-videos {
+    @include desktop {
+        padding-left: 2rem;
+    }
+    &__title {
+        @include subheader;
+        color: $Silver;
+        padding-top: 1rem;
+    }
+}

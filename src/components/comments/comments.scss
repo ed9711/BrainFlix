@@ -7,6 +7,16 @@
         justify-content: space-between;
         max-width: 700px;
         border-bottom: 1px solid $Mercury;
+        @include desktop {
+            border-bottom: none;
+            border-top: 1px solid $Mercury;
+            padding-right: 2rem;
+        }
+        &--head {
+            @include desktop {
+                border-top: none;
+            }
+        }
     }
     &__subblock {
         width: 80%;

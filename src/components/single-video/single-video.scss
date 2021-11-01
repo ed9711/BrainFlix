@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colour" as *;
+
+.side-videos {
+    &__block {
+        display: flex;
+        margin: 1rem 0;
+    }
+    &__container {
+        background-color: $Mercury;
+        border-radius: 4px;
+        width: 105px;
+        height: 64px;
+    }
+    &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+    }
+    &__subblock {
+        width: 175px;
+        padding-left: 1rem;
+    }
+    &__name {
+        @include subheader;
+    }
+    &__channel {
+        @include body-copy;
+    }
+}
