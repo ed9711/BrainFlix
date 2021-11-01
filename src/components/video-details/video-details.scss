@@ -4,7 +4,7 @@
 .video {
     &__details {
         @include desktop {
-            border-right: 1px solid $Mercury;
+            border-right: 1px solid $mercury;
         }
     }
     &__title {
@@ -21,7 +21,7 @@
         display: flex;
         justify-content: space-between;
         padding: 0.5rem 0;
-        border: $Mercury 1px solid;
+        border: $mercury 1px solid;
         border-left: none;
         border-right: none;
         @include tablet {
@@ -46,7 +46,7 @@
         &-date {
             margin: 0.5rem 0;
             @include body-copy;
-            color: $Silver;
+            color: $silver;
         }
     }
     &__stats {
@@ -58,7 +58,7 @@
         @include body-copy;
         margin: 0.5rem 0;
         padding-right: 3rem;
-        color: $Silver;
+        color: $silver;
         &::before {
             content: url(../../assets/Icons/views.svg);
             vertical-align: middle;

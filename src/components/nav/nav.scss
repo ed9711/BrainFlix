@@ -35,13 +35,13 @@
     }
     &__search {
         width: 70%;
-        border: $Mercury 1px solid;
+        border: $mercury 1px solid;
         border-radius: 4px;
         padding: 0.5rem 0;
-        background: url(../../assets/Icons/search.svg) no-repeat scroll 7px 7px, $Alabaster;
+        background: url(../../assets/Icons/search.svg) no-repeat scroll 7px 7px, $alabaster;
         padding-left: 2rem;
         &:focus-visible {
-            outline: 2px solid $BandSite-Blue;
+            outline: 2px solid $bandsite-blue;
         }
         @include tablet {
             padding: 0.75rem 2rem;
@@ -52,7 +52,7 @@
 
     &__upload {
         width: 100%;
-        background: url(../../assets/Icons/upload.svg) no-repeat scroll 7px 7px, $BandSite-Blue;
+        background: url(../../assets/Icons/upload.svg) no-repeat scroll 7px 7px, $bandsite-blue;
         padding: 0.5rem 0;
         border-color: transparent;
         border-radius: 4px;

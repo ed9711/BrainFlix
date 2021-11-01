@@ -6,10 +6,10 @@
         display: flex;
         justify-content: space-between;
         max-width: 700px;
-        border-bottom: 1px solid $Mercury;
+        border-bottom: 1px solid $mercury;
         @include desktop {
             border-bottom: none;
-            border-top: 1px solid $Mercury;
+            border-top: 1px solid $mercury;
             padding-right: 2rem;
         }
         &--head {
@@ -38,7 +38,7 @@
         top: 24px;
         &--empty {
             background-image: none;
-            background-color: $Mercury;
+            background-color: $mercury;
             top: 16px;
         }
     }
@@ -48,18 +48,18 @@
         }
         &-lable {
             @include subheader;
-            color: $Silver;
+            color: $silver;
         }
         &-field {
             box-sizing: border-box;
             width: 100%;
             height: 96px;
-            background-color: $Alabaster;
+            background-color: $alabaster;
             border-radius: 4px;
-            border: 1px solid $Mercury;
+            border: 1px solid $mercury;
             margin-top: 0.3rem;
             &:focus-visible {
-                outline: 2px solid $BandSite-Blue;
+                outline: 2px solid $bandsite-blue;
             }
             @include tablet {
                 height: 36px;
@@ -70,7 +70,7 @@
             width: 100%;
             @include labels-buttons;
             box-sizing: border-box;
-            background: url(../../assets/Icons/add_comment.svg) no-repeat scroll 7px 7px, $BandSite-Blue;
+            background: url(../../assets/Icons/add_comment.svg) no-repeat scroll 7px 7px, $bandsite-blue;
             border-color: transparent;
             padding: 0.5rem 0;
             border-radius: 4px;
