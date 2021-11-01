@@ -24,30 +24,30 @@
 @mixin page-header {
     @include text-detail(1.5rem, 2rem, Bold);
     @include tablet {
-        @include text-detail(33px, 44px, Bold);
+        @include text-detail(2.0625rem, 2.75rem, Bold);
     }
 }
 
 @mixin section-header {
-    @include text-detail(12px, 20px, Bold);
+    @include text-detail(0.75rem, 1.25rem, Bold);
 }
 
 @mixin subheader {
-    @include text-detail(13px, 18px, Bold);
+    @include text-detail(0.8125rem, 1.125rem, Bold);
     @include tablet {
-        @include text-detail(14px, 22px, Bold);
+        @include text-detail(0.875rem, 1.375rem, Bold);
     }
 }
 
 @mixin body-copy {
-    @include text-detail(13px, 18px, normal);
+    @include text-detail(0.8125rem, 1.125rem, normal);
     @include tablet {
-        @include text-detail(14px, 22px, normal);
+        @include text-detail(0.875rem, 1.375rem, normal);
     }
 }
 
 @mixin labels-buttons {
-    @include text-detail(12px, 20px, Bold);
+    @include text-detail(0.75rem, 1.25rem, Bold);
     color: $White;
 }
 

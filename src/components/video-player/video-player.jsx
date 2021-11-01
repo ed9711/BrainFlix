@@ -5,9 +5,9 @@ class VideoPlayer extends Component {
 
     render(){
         return( 
-        <video className="video__player" poster={this.props.videoDetails.image} controls>
-            
-        </video>
+        <div className="video__container">
+          <video className="video__player" poster={this.props.videoDetails.image} controls></video>
+        </div>
         );
     };
 }
