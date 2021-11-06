@@ -48,7 +48,7 @@
 
 @mixin labels-buttons {
     @include text-detail(0.75rem, 1.25rem, Bold);
-    color: $White;
+    color: $white;
 }
 
 @mixin padding-calc {

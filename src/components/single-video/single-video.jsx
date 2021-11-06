@@ -1,10 +1,11 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import './single-video.scss';
 
 class SingleVideo extends Component {
     render(){
         return(
-            <div className="side-videos__block" onClick={() => this.props.onClick(this.props.video.id)}>
+            <Link to={"/video/"+this.props.video.id} className="side-videos__block" >
                 <div className="side-videos__container">
                     <img className="side-videos__img" src={this.props.video.image} alt="video thumbnail" />
                 </div>
@@ -12,7 +13,7 @@ class SingleVideo extends Component {
                     <div className="side-videos__name">{this.props.video.title}</div>
                     <div className="side-videos__channel">{this.props.video.channel}</div>
                 </div>
-            </div>
+            </Link>
         );
     };
 }
