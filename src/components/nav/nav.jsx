@@ -14,7 +14,7 @@ class Nav extends Component {
                     <div className="nav__subblock">
                         <input className="nav__search" type="text" placeholder="Search"></input>
                     </div>
-                    <div><button className="nav__upload">UPLOAD</button></div>
+                    <Link to="/upload"><button className="nav__upload">UPLOAD</button></Link>
                     <div className="nav__avatar"></div>
                 </div>
             </nav>

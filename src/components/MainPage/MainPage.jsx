@@ -25,19 +25,20 @@ class MainPage extends Component {
           .then((response) => {
             newState.selectedVideo = response.data;
             this.setState(newState);
+            console.log("mainpage mounted");
           });
       });
   };
   componentDidMount() {
-    console.log("mainpage mounted");
-    this.setUpMainPage();
+      this.setUpMainPage();
   }
 
   componentDidUpdate(prevProps) {
     console.log("main did update");
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-        const currenId = this.props.match.params.videoId || this.state.videos[0].id;
+        console.log(prevProps.match.params.videoId, this.props.match.params.videoId);
+        const currenId = this.props.match.params.videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
         axios
       .get("https://project-2-api.herokuapp.com/videos/" + currenId + apiKey)
       .then((response) => {
@@ -46,14 +47,10 @@ class MainPage extends Component {
     }
   }
 
-//   handleOnClick = (id) => {
-    
-//   };
-
   render() {
     console.log("main rendered");
     console.log(this.state);
-    if (!this.state.selectedVideo) {
+    if (!this.state.selectedVideo || !this.state.videos) {
       return (
         <>
           <Nav />
