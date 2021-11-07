@@ -38,12 +38,17 @@ class MainPage extends Component {
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
         console.log(prevProps.match.params.videoId, this.props.match.params.videoId);
-        const currenId = this.props.match.params.videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
-        axios
-      .get("https://project-2-api.herokuapp.com/videos/" + currenId + apiKey)
-      .then((response) => {
-        this.setState({ ...this.state, selectedVideo: response.data });
-      });
+
+        if (!this.props.match.params.videoId){
+            this.setUpMainPage();
+        } else {
+            const currenId = this.props.match.params.videoId || this.state.videos[0].id;
+            axios
+        .get("https://project-2-api.herokuapp.com/videos/" + currenId + apiKey)
+        .then((response) => {
+            this.setState({ ...this.state, selectedVideo: response.data });
+        });
+        }
     }
   }
 
