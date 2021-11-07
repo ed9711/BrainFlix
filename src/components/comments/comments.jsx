@@ -14,7 +14,7 @@ class Comments extends Component {
                             <label className="comments__form-lable" htmlFor="comment">JOIN THE CONVERSATION</label>
                             <textarea className="comments__form-field" type="text" name="comment" id="comment" placeholder="Add a new comment" required=""></textarea>
                         </form>
-                        <button className="comments__form-submit" type="submit" form="form">COMMENT</button>
+                        <button className="comments__form-submit" type="button" form="form">COMMENT</button>
                     </div>
                 </div>
                 <div className="comments__all">

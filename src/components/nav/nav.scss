@@ -51,16 +51,8 @@
     }
 
     &__upload {
-        width: 100%;
+        @include button-style;
         background: url(../../assets/Icons/upload.svg) no-repeat scroll 7px 7px, $bandsite-blue;
-        padding: 0.5rem 0;
-        border-color: transparent;
-        border-radius: 4px;
-        margin: 1rem 0;
-        @include labels-buttons;
-        @include tablet {
-            width: 158px;
-        }
     }
     &__avatar {
         @include avatar;

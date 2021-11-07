@@ -67,16 +67,9 @@
             }
         }
         &-submit {
-            width: 100%;
-            @include labels-buttons;
-            box-sizing: border-box;
+            @include button-style;
             background: url(../../assets/Icons/add_comment.svg) no-repeat scroll 7px 7px, $bandsite-blue;
-            border-color: transparent;
-            padding: 0.5rem 0;
-            border-radius: 4px;
-            margin: 1rem 0;
             @include tablet {
-                width: 150px;
                 margin: 2px 0;
             }
         }
