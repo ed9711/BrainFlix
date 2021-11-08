@@ -25,7 +25,7 @@ class MainPage extends Component {
           .then((response) => {
             newState.selectedVideo = response.data;
             this.setState(newState);
-            console.log("mainpage mounted");
+            // console.log("mainpage mounted");
           });
       });
   };
@@ -34,10 +34,10 @@ class MainPage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log("main did update");
+    // console.log("main did update");
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-        console.log(prevProps.match.params.videoId, this.props.match.params.videoId);
+        // console.log(prevProps.match.params.videoId, this.props.match.params.videoId);
 
         if (!this.props.match.params.videoId){
             this.setUpMainPage();
@@ -53,8 +53,8 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log("main rendered");
-    console.log(this.state);
+    // console.log("main rendered");
+    // console.log(this.state);
     if (!this.state.selectedVideo || !this.state.videos) {
       return (
         <>

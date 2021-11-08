@@ -1,8 +1,13 @@
 import React from "react";
 import Nav from "../nav/nav";
 import "./VideoUpload.scss"
+import { Link } from "react-router-dom";
 
 function VideoUpload(props) {
+  const handleClick = (event) => {
+    alert("Video Uploaded!");
+  };
+
   return (
     <>
       <Nav />
@@ -40,12 +45,17 @@ function VideoUpload(props) {
         </div>
       </div>
       <div className="upload__form-buttons">
-        <button className="upload__form-submit" type="button" form="form">
-          PUBLISH
-        </button>
-        <button className="upload__form-cancel" type="button" form="form">
-          CANCEL
-        </button>
+        <Link to="/">
+          <button className="upload__form-submit" type="submit" form="form" onClick={handleClick}>
+            PUBLISH
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="upload__form-cancel" type="button" form="form">
+            CANCEL
+          </button>
+        </Link>
+        
       </div>
     </>
   );

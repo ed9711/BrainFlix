@@ -34,6 +34,8 @@
         background-color: $mercury;
         border-radius: 4px;
         margin-bottom: 1rem;
+        background: url(../../assets/Images/Mohan-muruge.jpg);
+        background-size: cover;
     }
     &__form {
         @include desktop {
