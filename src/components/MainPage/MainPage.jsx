@@ -1,8 +1,8 @@
 import "./MainPage.scss";
-import Nav from "../../components/nav/nav";
-import VideoPlayer from "../../components/video-player/video-player";
-import VideoDetails from "../../components/video-details/video-details";
-import SideVideo from "../../components/side-video/side-video";
+import Nav from "../Nav/Nav";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import VideoDetails from "../VideoDetails/VideoDetails";
+import SideVideo from "../SideVideo/SideVideo";
 import { Component } from "react";
 import axios from "axios";
 import { apiKey } from "../../utils";

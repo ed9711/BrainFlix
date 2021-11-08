@@ -1,4 +1,3 @@
-import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
 import VideoUpload from "./components/VideoUpload/VideoUpload";
