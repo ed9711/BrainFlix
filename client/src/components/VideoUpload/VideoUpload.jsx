@@ -2,10 +2,21 @@ import React from "react";
 import Nav from "../Nav/Nav";
 import "./VideoUpload.scss"
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function VideoUpload(props) {
-  const handleClick = (event) => {
-    alert("Video Uploaded!");
+  const handleSubmit = (e, props) => {
+    e.preventDefault();
+    axios.post("http://localhost:8080/videos/", {
+      title: e.target.title.value,
+      description: e.target.description.value,
+      channel: e.target.title.value
+    })
+    .then(response => {
+        alert("Video Uploaded!");
+        props.history.push('/');
+      }
+    );
   };
 
   return (
@@ -18,26 +29,26 @@ function VideoUpload(props) {
           <div className="upload__thumbnail"></div>
         </div>
         <div className="upload__subblock">
-          <form action="" method="post" className="upload__form" id="form">
-            <label className="upload__form-lable" htmlFor="video-title">
+          <form action="#" method="post" className="upload__form" id="form" onSubmit={(event) => handleSubmit(event, props)}>
+            <label className="upload__form-lable" htmlFor="title">
               TITLE YOUR VIDEO
             </label>
             <input
               className="upload__form-field upload__form-field--small"
               type="text"
-              name="video-title"
-              id="video-title"
+              name="title"
+              id="title"
               placeholder="Add a title to your video"
               required=""
             ></input>
-            <label className="upload__form-lable" htmlFor="video-description">
+            <label className="upload__form-lable" htmlFor="description">
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
               className="upload__form-field"
               type="text"
-              name="video-description"
-              id="video-description"
+              name="description"
+              id="description"
               placeholder="Add a description to your video"
               required=""
             ></textarea>
@@ -45,11 +56,9 @@ function VideoUpload(props) {
         </div>
       </div>
       <div className="upload__form-buttons">
-        <Link to="/">
-          <button className="upload__form-submit" type="submit" form="form" onClick={handleClick}>
+          <button className="upload__form-submit" type="submit" form="form" >
             PUBLISH
           </button>
-        </Link>
         <Link to="/">
           <button className="upload__form-cancel" type="button" form="form">
             CANCEL

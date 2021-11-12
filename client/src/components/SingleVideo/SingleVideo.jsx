@@ -3,7 +3,7 @@ import "./SingleVideo.scss";
 
 function SingleVideo(props) {
   return (
-    <Link to={"/video/" + props.video.id} className="side-videos__block">
+    <Link to={"/videos/" + props.video.id} className="side-videos__block">
       <div className="side-videos__container">
         <img
           className="side-videos__img"

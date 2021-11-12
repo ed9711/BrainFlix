@@ -13,14 +13,14 @@ class MainPage extends Component {
   setUpMainPage = () => {
     const newState = { videos: [], selectedVideo: {} };
     axios
-      .get("https://project-2-api.herokuapp.com/videos" + apiKey)
+      .get("http://localhost:8080/videos")
       .then((response) => {
         newState.videos = response.data;
         const currentId =
           this.props.match.params.videoId || response.data[0].id;
         axios
           .get(
-            "https://project-2-api.herokuapp.com/videos/" + currentId + apiKey
+            "http://localhost:8080/videos/" + currentId
           )
           .then((response) => {
             newState.selectedVideo = response.data;
@@ -44,7 +44,7 @@ class MainPage extends Component {
         } else {
             const currenId = this.props.match.params.videoId || this.state.videos[0].id;
             axios
-        .get("https://project-2-api.herokuapp.com/videos/" + currenId + apiKey)
+        .get("http://localhost:8080/videos/" + currenId)
         .then((response) => {
             this.setState({ ...this.state, selectedVideo: response.data });
         });
