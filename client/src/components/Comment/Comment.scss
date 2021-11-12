@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colour" as *;
+
+.comments {
+    &__comment {
+        width: 80%;
+        position: relative;
+        margin: 1rem 0;
+        @include tablet {
+            width: 90%;
+        }
+        &-name {
+            @include subheader;
+        }
+        &-time {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            @include body-copy;
+            color: $silver;
+        }
+        &-text {
+            @include body-copy;
+            margin: 0;
+            padding-top: 0.5rem;
+        }
+    }
+}

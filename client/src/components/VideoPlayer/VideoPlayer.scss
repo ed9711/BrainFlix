@@ -1,0 +1,21 @@
+@use "../../styles/partials/colour" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video__container {
+    width: 100vw;
+    background-color: $bandsite-darkblack;
+    display: flex;
+    justify-content: center;
+}
+.video__player {
+    width: 100vw;
+    height: 52.25vw;
+    @include tablet {
+        max-width: 697px;
+        max-height: 697px*0.5625;
+    }
+    @include desktop {
+        max-width: 845px;
+        max-height: 845px*0.5625;
+    }
+}
