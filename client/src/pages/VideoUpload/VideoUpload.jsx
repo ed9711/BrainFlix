@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../Nav/Nav";
 import "./VideoUpload.scss"
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -22,7 +21,6 @@ function VideoUpload(props) {
 
   return (
     <>
-      <Nav />
       <h1 className="upload__title">Upload Video</h1>
       <div className="upload__block">
         <div className="upload__subblock">

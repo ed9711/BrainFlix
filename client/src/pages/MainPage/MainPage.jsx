@@ -1,8 +1,7 @@
 import "./MainPage.scss";
-import Nav from "../Nav/Nav";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import VideoDetails from "../VideoDetails/VideoDetails";
-import SideVideo from "../SideVideo/SideVideo";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import SideVideo from "../../components/SideVideo/SideVideo";
 import { Component } from "react";
 import axios from "axios";
 
@@ -25,7 +24,6 @@ class MainPage extends Component {
           .then((response) => {
             newState.selectedVideo = response.data;
             this.setState(newState);
-            // console.log("mainpage mounted");
           });
       });
   };
@@ -34,11 +32,8 @@ class MainPage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    // console.log("main did update");
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-        // console.log(prevProps.match.params.videoId, this.props.match.params.videoId);
-
         if (!this.props.match.params.videoId){
             this.setUpMainPage();
         } else {
@@ -53,18 +48,14 @@ class MainPage extends Component {
   }
 
   render() {
-    // console.log("main rendered");
-    // console.log(this.state);
     if (!this.state.selectedVideo || !this.state.videos) {
       return (
         <>
-          <Nav />
         </>
       );
     }
     return (
       <>
-        <Nav />
         <section className="video">
           <VideoPlayer videoDetails={this.state.selectedVideo} />
           <section className="video__block">
