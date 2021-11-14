@@ -70,7 +70,8 @@
             @include button-style;
             background: url(../../assets/Icons/add_comment.svg) no-repeat scroll 7px 7px, $bandsite-blue;
             @include tablet {
-                margin: 2px 0;
+                margin: 4px 0;
+                margin-left: 0.5rem;
             }
         }
     }
