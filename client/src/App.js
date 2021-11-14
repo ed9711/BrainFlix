@@ -8,7 +8,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={MainPage} />
         <Route path="/videos/:videoId" component={MainPage} />
-        <Route path="/upload" exact component={VideoUpload} />
+        <Route path="/upload" component={VideoUpload} />
       </Switch>
     </BrowserRouter>
   );
