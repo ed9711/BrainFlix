@@ -10,6 +10,7 @@
 .video__player {
     width: 100vw;
     height: 52.25vw;
+    object-fit: cover;
     @include tablet {
         max-width: 697px;
         max-height: 697px*0.5625;

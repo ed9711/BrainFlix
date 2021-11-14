@@ -5,7 +5,7 @@ import VideoDetails from "../VideoDetails/VideoDetails";
 import SideVideo from "../SideVideo/SideVideo";
 import { Component } from "react";
 import axios from "axios";
-import { apiKey } from "../../utils";
+
 
 class MainPage extends Component {
   state = { videos: null, selectedVideo: null };

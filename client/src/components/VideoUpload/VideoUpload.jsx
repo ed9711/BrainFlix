@@ -10,7 +10,8 @@ function VideoUpload(props) {
     axios.post("http://localhost:8080/videos/", {
       title: e.target.title.value,
       description: e.target.description.value,
-      channel: e.target.title.value
+      channel: e.target.title.value,
+      image: "http://localhost:8080/images/image0.jpeg"
     })
     .then(response => {
         alert("Video Uploaded!");

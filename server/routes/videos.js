@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
         id: newId,
         title: req.body.title,
         channel: req.body.channel,
-        image:"http://localhost:8080/images/image0.jpeg"
+        image: req.body.image
     };
     const newVideoDetail = {
         id: newId,
