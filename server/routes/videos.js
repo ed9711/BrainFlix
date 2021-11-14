@@ -5,13 +5,11 @@ const { v4: uuidv4 } = require('uuid');
 
 
 router.get("/", (req, res) => {
-    console.log(req.params);
     res.status(200);
     res.json(videoJSON[0]);
 });
 
 router.get("/:videoId", (req, res, next) => {
-    console.log(req.params);
     const video = videoJSON[1].find(video => video.id === req.params.videoId);
     if (video) {
         res.status(200);
@@ -23,13 +21,12 @@ router.get("/:videoId", (req, res, next) => {
 });
 
 router.post("/", (req, res) => {
-    console.log(req.body);
     const newId = uuidv4();
     const newVideo = {
         id: newId,
         title: req.body.title,
         channel: req.body.channel,
-        image:"https://i.imgur.com/l2Xfgpl.jpg"
+        image:"http://localhost:8080/images/image0.jpeg"
     };
     const newVideoDetail = {
         id: newId,
@@ -44,7 +41,7 @@ router.post("/", (req, res) => {
         timestamp: new Date().getTime(),
         comments: []
       };
-    console.log(newVideoDetail.timestamp);
+
     videoJSON[0].push(newVideo);
     videoJSON[1].push(newVideoDetail);
     res.json(newVideo);
