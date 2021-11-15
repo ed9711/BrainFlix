@@ -16,7 +16,7 @@ function VideoUpload(props) {
         alert("Video Uploaded!");
         props.history.push('/');
       }
-    );
+    ).catch(error => console.error(error));
   };
 
   return (
@@ -38,7 +38,8 @@ function VideoUpload(props) {
               name="title"
               id="title"
               placeholder="Add a title to your video"
-              required=""
+              required
+              pattern="(.|\s)*\S(.|\s)*"
             ></input>
             <label className="upload__form-lable" htmlFor="description">
               ADD A VIDEO DESCRIPTION
@@ -49,7 +50,6 @@ function VideoUpload(props) {
               name="description"
               id="description"
               placeholder="Add a description to your video"
-              required=""
             ></textarea>
           </form>
         </div>

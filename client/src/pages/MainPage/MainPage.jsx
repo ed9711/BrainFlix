@@ -5,54 +5,44 @@ import SideVideo from "../../components/SideVideo/SideVideo";
 import { Component } from "react";
 import axios from "axios";
 
-
 class MainPage extends Component {
   state = { videos: null, selectedVideo: null };
 
   setUpMainPage = () => {
     const newState = { videos: [], selectedVideo: {} };
-    axios
+    const promise = axios
       .get("http://localhost:8080/videos")
       .then((response) => {
         newState.videos = response.data;
         const currentId =
           this.props.match.params.videoId || response.data[0].id;
-        axios
-          .get(
-            "http://localhost:8080/videos/" + currentId
-          )
-          .then((response) => {
-            newState.selectedVideo = response.data;
-            this.setState(newState);
-          });
-      });
+        return currentId;
+      }).catch(error => console.error(error));
+    promise.then((response) =>
+      axios.get("http://localhost:8080/videos/" + response).then((response) => {
+        newState.selectedVideo = response.data;
+        this.setState(newState);
+      }).catch(error => console.error(error))
+    );
   };
   componentDidMount() {
-      this.setUpMainPage();
+    this.setUpMainPage();
   }
 
   componentDidUpdate(prevProps) {
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-        if (!this.props.match.params.videoId){
-            this.setUpMainPage();
-        } else {
-            const currenId = this.props.match.params.videoId || this.state.videos[0].id;
-            axios
-        .get("http://localhost:8080/videos/" + currenId)
-        .then((response) => {
-            this.setState({ ...this.state, selectedVideo: response.data });
-        });
-        }
+      const currenId =
+        this.props.match.params.videoId || this.state.videos[0].id;
+      axios.get("http://localhost:8080/videos/" + currenId).then((response) => {
+        this.setState({ ...this.state, selectedVideo: response.data });
+      }).catch(error => console.error(error));
     }
   }
 
   render() {
     if (!this.state.selectedVideo || !this.state.videos) {
-      return (
-        <>
-        </>
-      );
+      return <></>;
     }
     return (
       <>
