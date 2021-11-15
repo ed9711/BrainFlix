@@ -2,16 +2,16 @@ const express = require('express')
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs')
+const path = require("path");
 
-const videoJSON = JSON.parse(fs.readFileSync("./data/videos.json"));
+const videoJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/videos.json")));
 
 router.get("/", (req, res) => {
     if (videoJSON[0]){
         res.status(200);
         res.json(videoJSON[0]);
     } else {
-        res.status(404);
-        next();
+        res.status(404).send("Videos not found");
     }   
 });
 
@@ -21,8 +21,7 @@ router.get("/:videoId", (req, res, next) => {
         res.status(200);
         res.json(video);
     } else {
-        res.status(404);
-        next();
+        res.status(404).send("Video not found");
     }
 });
 
@@ -54,8 +53,7 @@ router.post("/", (req, res) => {
         res.status(201);
         res.json(newVideo);
     } catch (error) {
-        res.status(400);
-        next();
+        res.status(400).send("Upload failed");
     }  
 });
 

@@ -17,7 +17,7 @@ class MainPage extends Component {
         const currentId =
           this.props.match.params.videoId || response.data[0].id;
         return currentId;
-      }).catch(error => console.error(error));
+      }).catch(error => console.log(error));
     promise.then((response) =>
       axios.get("http://localhost:8080/videos/" + response).then((response) => {
         newState.selectedVideo = response.data;
@@ -32,11 +32,16 @@ class MainPage extends Component {
   componentDidUpdate(prevProps) {
     window.scrollTo(0, 0);
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-      const currenId =
-        this.props.match.params.videoId || this.state.videos[0].id;
-      axios.get("http://localhost:8080/videos/" + currenId).then((response) => {
-        this.setState({ ...this.state, selectedVideo: response.data });
-      }).catch(error => console.error(error));
+      // check if state is empty 
+      if (!this.state.videos){
+        this.setUpMainPage();
+      } else {
+        const currenId =
+          this.props.match.params.videoId || this.state.videos[0].id;
+        axios.get("http://localhost:8080/videos/" + currenId).then((response) => {
+          this.setState({ ...this.state, selectedVideo: response.data });
+        }).catch(error => console.error(error));
+      }
     }
   }
 
